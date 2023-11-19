@@ -1,2 +1,5 @@
-res://Scenes/ui.tscn
+res://Scenes/world.tscn
 res://Scenes/ui.gd
+res://Scenes/ui.tscn
+res://Scenes/player.tscn
+res://windTurbine.tscn
