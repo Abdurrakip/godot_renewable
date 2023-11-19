@@ -1,0 +1,698 @@
+[gd_scene load_steps=11 format=3 uid="uid://cgcwxou583mwq"]
+
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="1_o4nci"]
+[ext_resource type="Texture2D" uid="uid://cdweo47qs27k0" path="res://Art/bolt1.png" id="2_6khhk"]
+[ext_resource type="Texture2D" uid="uid://ck71u60j5hqxh" path="res://Art/screw1.png" id="3_keyfy"]
+[ext_resource type="Texture2D" uid="uid://buo0wlvvcndj0" path="res://Art/cable1.png" id="4_x0n0j"]
+[ext_resource type="Texture2D" uid="uid://ccslas1c3dwhf" path="res://Art/scrap1.png" id="5_8bomc"]
+[ext_resource type="Texture2D" uid="uid://cyrwqp7x1jaj5" path="res://Art/dam.png" id="6_bom2x"]
+[ext_resource type="Texture2D" uid="uid://dnff3kxq2qvp8" path="res://Art/solar_panel.png" id="7_ljt8w"]
+[ext_resource type="Texture2D" uid="uid://dcqtxsdxg52v1" path="res://Art/turbine_pool.png" id="8_up5k4"]
+[ext_resource type="Texture2D" uid="uid://ilxs6cqwdbsb" path="res://Art/turbine_blade.png" id="9_f2q25"]
+[ext_resource type="Texture2D" uid="uid://bofhqnbx5ysos" path="res://Art/geothermal.png" id="10_wfjr8"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o4nci")
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 90.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel/PanelContainer"]
+layout_mode = 2
+color = Color(0.34902, 0.529412, 0.329412, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/PanelContainer/ColorRect"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 4
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 2
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Kaynaklar:
+"
+horizontal_alignment = 1
+
+[node name="Bolt" type="HBoxContainer" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Bolt"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_6khhk")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Bolt"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Screw" type="HBoxContainer" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Screw"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_keyfy")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Screw"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Cable" type="HBoxContainer" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Cable"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_x0n0j")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Cable"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Scrap" type="HBoxContainer" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Scrap"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_8bomc")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer/Scrap"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Label6" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Sorunlar:"
+horizontal_alignment = 1
+
+[node name="Co2label" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.584314, 0, 0.0156863, 1)
+theme_override_font_sizes/font_size = 10
+text = "Yüksek CO2 Oranı"
+
+[node name="Label7" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+horizontal_alignment = 1
+
+[node name="WaterLabel" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.584314, 0, 0.0156863, 1)
+theme_override_font_sizes/font_size = 10
+text = "Kirli Su Kaynakları"
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+horizontal_alignment = 1
+
+[node name="EkoLabel" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.584314, 0, 0.0156863, 1)
+theme_override_font_sizes/font_size = 10
+text = "Ölü Ekosistem"
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+horizontal_alignment = 1
+
+[node name="AcidLabel" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.584314, 0, 0.0156863, 1)
+theme_override_font_sizes/font_size = 10
+text = "Asit Yağmuru Riski"
+horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="Panel/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 1
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -315.0
+offset_top = -65.0
+offset_bottom = 65.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Oyunun İskeletini tamamlandı ama 
+Daha birleştirme süreci için yapmamız
+gereken çok şey var. İnşAllah sabaha kadar
+yetişecek. Bu sebeple lütfen oyunun
+bu hâlini dikkate almayın"
+
+[node name="Panel2" type="Panel" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_right = 470.0
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel2"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel2/PanelContainer"]
+layout_mode = 2
+color = Color(0.682353, 0.596078, 0.317647, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="DamRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer"]
+self_modulate = Color(0.294118, 0.294118, 0.294118, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("6_bom2x")
+expand_mode = 3
+
+[node name="DamButton" type="Button" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -152.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="DamNecessity" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Gerekli:
+"
+horizontal_alignment = 1
+
+[node name="Bolt" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Bolt"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_6khhk")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Bolt"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Screw" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Screw"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_keyfy")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Screw"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Cable" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Cable"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_x0n0j")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Cable"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Scrap" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Scrap"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_8bomc")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamNecessity/VBoxContainer2/Scrap"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+text = "    "
+
+[node name="SolarRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer"]
+self_modulate = Color(0.294118, 0.294118, 0.294118, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("7_ljt8w")
+expand_mode = 3
+
+[node name="SolarButton" type="Button" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -152.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="SolarNecessity" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Gerekli:"
+horizontal_alignment = 1
+
+[node name="Bolt" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Bolt"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_6khhk")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Bolt"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Screw" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Screw"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_keyfy")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Screw"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Cable" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Cable"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_x0n0j")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Cable"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Scrap" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Scrap"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_8bomc")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarNecessity/VBoxContainer/Scrap"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+
+[node name="WindRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2"]
+modulate = Color(0.364706, 0.364706, 0.364706, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("8_up5k4")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 56.0
+offset_right = 71.0
+offset_bottom = 52.0
+texture = ExtResource("9_f2q25")
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 104.0
+offset_top = 66.0
+offset_right = 119.0
+offset_bottom = 118.0
+rotation = 2.0944
+texture = ExtResource("9_f2q25")
+stretch_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 74.0
+offset_right = 35.0
+offset_bottom = 126.0
+rotation = 4.18879
+texture = ExtResource("9_f2q25")
+stretch_mode = 4
+
+[node name="WindButton" type="Button" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -152.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="WindNecessity" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Gerekli:"
+horizontal_alignment = 1
+
+[node name="Bolt" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Bolt"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_6khhk")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Bolt"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Screw" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Screw"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_keyfy")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Screw"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Cable" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Cable"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_x0n0j")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Cable"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Scrap" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Scrap"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_8bomc")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindNecessity/VBoxContainer/Scrap"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/VBoxContainer4"]
+layout_mode = 2
+text = "    "
+
+[node name="GeoRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2"]
+self_modulate = Color(0.294118, 0.294118, 0.294118, 1)
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("10_wfjr8")
+expand_mode = 3
+
+[node name="GeoButton" type="Button" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -152.0
+offset_bottom = -152.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
+[node name="GeoNecessity" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Gerekli:"
+horizontal_alignment = 1
+
+[node name="Bolt" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Bolt"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_6khhk")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Bolt"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Screw" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Screw"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_keyfy")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Screw"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Cable" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Cable"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_x0n0j")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Cable"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Scrap" type="HBoxContainer" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TextureRect" type="TextureRect" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Scrap"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_8bomc")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoNecessity/VBoxContainer/Scrap"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = ": 0"
+
+[node name="Label" type="Label" parent="Panel2/PanelContainer/ColorRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="WarnPanel" type="Panel" parent="Panel2"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel2/WarnPanel"]
+self_modulate = Color(0.717647, 0.203922, 0.270588, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.705882, 0.203922, 0.270588, 1)
+
+[node name="Label" type="Label" parent="Panel2/WarnPanel/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Yeterli Kaynağın Olmadığı İçin Bu Sistemi Aktifleştiremedin!
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarnTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="pressed" from="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/DamRect/DamButton" to="." method="_on_dam_button_pressed"]
+[connection signal="pressed" from="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer/SolarRect/SolarButton" to="." method="_on_solar_button_pressed"]
+[connection signal="pressed" from="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/WindRect/WindButton" to="." method="_on_wind_button_pressed"]
+[connection signal="pressed" from="Panel2/PanelContainer/ColorRect/VBoxContainer/HBoxContainer2/GeoRect/GeoButton" to="." method="_on_geo_button_pressed"]
+[connection signal="timeout" from="WarnTimer" to="." method="_on_warn_timer_timeout"]

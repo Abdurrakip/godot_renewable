@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce6luds8a2b4d"]
+
+[ext_resource type="Texture2D" uid="uid://dcqtxsdxg52v1" path="res://Art/turbine_pool.png" id="1_yy5jd"]
+[ext_resource type="Texture2D" uid="uid://ilxs6cqwdbsb" path="res://Art/turbine_blade.png" id="2_f52rl"]
+
+[node name="Control" type="TextureRect"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -159.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yy5jd")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = -25.0
+offset_right = 187.0
+offset_bottom = 102.0
+texture = ExtResource("2_f52rl")
+expand_mode = 4
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 47.0
+offset_top = 181.0
+offset_right = 87.0
+offset_bottom = 308.0
+rotation = 4.18879
+texture = ExtResource("2_f52rl")
+expand_mode = 4
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 284.0
+offset_top = 161.0
+offset_right = 324.0
+offset_bottom = 288.0
+rotation = 2.0944
+texture = ExtResource("2_f52rl")
+expand_mode = 4
