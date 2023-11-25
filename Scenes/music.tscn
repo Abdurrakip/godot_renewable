@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://0rercdf62vb7"]
+
+[ext_resource type="AudioStream" uid="uid://dwb12vbs5t5go" path="res://Audio/msuci.wav" id="1_g27ek"]
+
+[node name="Node2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_g27ek")
+autoplay = true

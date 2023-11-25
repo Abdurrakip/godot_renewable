@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4xou5lq5gego"]
+
+[ext_resource type="Script" path="res://Scenes/PoisonWaterArea.gd" id="1_wi3u0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb7ww"]
+size = Vector2(796, 117)
+
+[node name="PoisonWaterArea" type="Area2D"]
+position = Vector2(1778, 148)
+script = ExtResource("1_wi3u0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15.5)
+shape = SubResource("RectangleShape2D_rb7ww")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,125 @@
+[gd_scene load_steps=3 format=3 uid="uid://00foxfykm53u"]
+
+[ext_resource type="Texture2D" uid="uid://bn2pkx7bs255v" path="res://Art/frame.png" id="1_f3wqv"]
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_l03dm"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l03dm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+self_modulate = Color(0.737255, 0.490196, 0.509804, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_f3wqv")
+
+[node name="Menu" type="VBoxContainer" parent="NinePatchRect"]
+self_modulate = Color(0.615686, 0.615686, 0.615686, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -90.0
+offset_top = -97.5
+offset_right = 90.0
+offset_bottom = 97.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="NinePatchRect/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="NinePatchRect/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "BOT-3223"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="NinePatchRect/Menu"]
+layout_mode = 2
+text = "BAŞLA"
+
+[node name="Button2" type="Button" parent="NinePatchRect/Menu"]
+layout_mode = 2
+text = "AYARLAR"
+
+[node name="Button3" type="Button" parent="NinePatchRect/Menu"]
+layout_mode = 2
+text = "ÇIKIŞ"
+
+[node name="Panel" type="Panel" parent="NinePatchRect"]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="NinePatchRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "TAM EKRAN"
+
+[node name="Screen" type="CheckBox" parent="NinePatchRect/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="NinePatchRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="NinePatchRect/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "SES/MÜZİK  "
+
+[node name="Audio" type="CheckBox" parent="NinePatchRect/Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+button_pressed = true
+
+[node name="Label" type="Label" parent="NinePatchRect/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="backButton" type="Button" parent="NinePatchRect/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+text = "GERİ"
+
+[connection signal="pressed" from="NinePatchRect/Menu/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/Menu/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="NinePatchRect/Menu/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="toggled" from="NinePatchRect/Panel/VBoxContainer/HBoxContainer/Screen" to="." method="_on_screen_toggled"]
+[connection signal="toggled" from="NinePatchRect/Panel/VBoxContainer/HBoxContainer2/Audio" to="." method="_on_audio_toggled"]
+[connection signal="pressed" from="NinePatchRect/Panel/VBoxContainer/backButton" to="." method="_on_back_button_pressed"]
